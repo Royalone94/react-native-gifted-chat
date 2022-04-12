@@ -11,6 +11,7 @@ import {
 } from 'react-native'
 // TODO: support web
 // @ts-ignore
+import FastImage from 'react-native-fast-image'
 import Lightbox from 'react-native-lightbox'
 import { IMessage } from './Models'
 import { StylePropType } from './utils'
@@ -75,7 +76,7 @@ export default class MessageImage<
             }}
             {...lightboxProps}
           >
-            <Image
+            <FastImage
               {...imageProps}
               style={[styles.image, imageStyle]}
               source={{ uri: currentMessage.image }}
