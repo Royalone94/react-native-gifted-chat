@@ -10,6 +10,7 @@ import {
   ImageStyle,
   TextStyle,
 } from 'react-native'
+import FastImage from 'react-native-fast-image'
 import Color from './Color'
 import { User } from './Models'
 import { StylePropType } from './utils'
@@ -112,14 +113,14 @@ export default class GiftedAvatar extends React.Component<GiftedAvatarProps> {
         return user.avatar([styles.avatarStyle, this.props.avatarStyle])
       } else if (typeof user.avatar === 'string') {
         return (
-          <Image
+          <FastImage
             source={{ uri: user.avatar }}
             style={[styles.avatarStyle, this.props.avatarStyle]}
           />
         )
       } else if (typeof user.avatar === 'number') {
         return (
-          <Image
+          <FastImage
             source={user.avatar}
             style={[styles.avatarStyle, this.props.avatarStyle]}
           />
